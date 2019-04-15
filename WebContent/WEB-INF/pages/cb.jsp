@@ -22,7 +22,7 @@
             <br>
             <br>
 
-            <form action="checkbalance.do" method="post">
+            <form action="/spring-bankapp-mvc/app/bank/cb" method="post">
                 <div class="form-group">
                     <label for="ACCNUMBER">Check Balance</label>
                     <input type="number" class="form-control input-sm" style="width:270px" id="ACCNUMBER"

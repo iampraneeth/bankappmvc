@@ -44,21 +44,21 @@
 				height="60"></li>
 			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/new_account">CREATE
 					NEW ACCOUNT</a></li>
-			<li class="nav-item"><a class="nav-link" href="withdrawls.jsp">WITHDRAWALS</a>
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/withdrawPage">WITHDRAWALS</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="deposits.jsp">DEPOSITS</a>
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/depositPage">DEPOSITS</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="funds.jsp">FUNDS</a>
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/fundsPage">FUNDS</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="cb.jsp">CHECK
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/cbPage">CHECK
 					BALANCE</a></li>
-			<li class="nav-item"><a class="nav-link" href="dad.jsp">DISPLAY
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/dadPage">DISPLAY
 					ACCOUNT DETAILS</a></li>
-			<li class="nav-item"><a class="nav-link" href="delete.jsp">DELETE
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/deletePage">DELETE
 					ACCOUNT</a></li>
-			<li class="nav-item"><a class="nav-link" href="update.jsp">UPDATE
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/updatePage">UPDATE
 					BANK DETAILS</a></li>
-			<li class="nav-item"><a class="nav-link" href="searchAccount.jsp">SEARCH
+			<li class="nav-item"><a class="nav-link" href="/spring-bankapp-mvc/app/bank/searchAccountPage">SEARCH
 					ACCOUNT </a></li>
 		</ul>
 

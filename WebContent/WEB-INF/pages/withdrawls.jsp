@@ -15,7 +15,7 @@
   <br>
   <br>
 
-  <form action="withdrawals.do" method="post">
+  <form action="/spring-bankapp-mvc/app/bank/withdrawls" method="post">
     <div class="form-group">
       <label for="ACCNUMBER">ACCOUNT NUMBER:</label>
       <input type="number" class="form-control input-sm" style="width:270px" id="ACCNUMBER" placeholder="Enter ACCOUNT NUMBER" name="number" required>

@@ -17,7 +17,7 @@
 
 
 
-	<form action="updateAction.do" method="post">
+	<form action="/spring-bankapp-mvc/app/bank/update" method="post">
 		<div class="form-group">
 			<label for="ACCNUMBER">ACCOUNT NUMBER:</label> 
 			<input type="number"

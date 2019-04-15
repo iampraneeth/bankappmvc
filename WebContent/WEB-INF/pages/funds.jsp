@@ -15,7 +15,7 @@
   <br>
   <br>
 
-  <form action="funds.do" method="post">
+  <form action="/spring-bankapp-mvc/app/bank/funds" method="post">
     <div class="form-group">
       <label for="ACCNUMBER1">FROM ACCOUNT NUMBER:</label>
       <input type="number" class="form-control input-sm" style="width:270px" id="ACCNUMBER" placeholder="Enter ACCOUNT NUMBER" name="number1" required>

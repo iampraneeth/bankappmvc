@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.capgemini.bankapp.client.BankAccount;
+import com.capgemini.bankapp.exception.AccountNotFoundException;
+import com.capgemini.bankapp.exception.LowBalanceException;
 import com.capgemini.bankapp.service.BankAccountService;
 
 @Controller
@@ -27,45 +29,124 @@ public class BankController {
 		service.addNewBankAccount(account);
 		return "index";
 	}
-	@RequestMapping("/withdrawls")
-	public String withdraw(@RequestParam("number") long accountId,@RequestParam("amount") double personBalance) {
-		
+	
+	@RequestMapping("/withdrawPage")
+	public String withdrawPage() {
 		return "withdrawls";
 	}
-	@RequestMapping("/deposits")
-	public String deposits() {
+	@RequestMapping("/withdrawls")
+	public String withdraw(@RequestParam("number") long accountId, @RequestParam("amount") double personBalance) {
+		try {
+			service.withdraw(accountId, personBalance);
+		} catch (AccountNotFoundException | LowBalanceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "index";
+	}
+	
+	
+	@RequestMapping("/depositPage")
+	public String depositsPage() {
 		return "deposits";
 	}
-	@RequestMapping("/funds")
-	public String funds() {
+	@RequestMapping("/deposit")
+	public String deposit(@RequestParam("number") long accountId, @RequestParam("amount") double personBalance) {
+		try {
+			service.deposit(accountId, personBalance);
+		} catch (AccountNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "index";
+	}
+	
+	@RequestMapping("/fundsPage")
+	public String fundsPage() {
 		return "funds";
-		
+	}
+	@RequestMapping("/funds")
+	public String funds(@RequestParam("number1") long accountId,@RequestParam("number2") long accountId2, @RequestParam("amount") double personBalance) {
+		try {
+			service.fundTransfer(accountId, accountId2, personBalance);
+		} catch (AccountNotFoundException | LowBalanceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "index";
+	}
+	
+	@RequestMapping("/cbPage")
+	public String cbPage() {
+		return "cb";
 	}
 	@RequestMapping("/cb")
-	public String cb() {
-		return "cb";
-		
+	public String cb(@RequestParam("number") long accountId) {
+		try {
+			service.checkBalance(accountId);
+		} catch (AccountNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "index";
 	}
+	
+	
+	@RequestMapping("/dadPage")
+	public String dadPage() {
+		return "dad";
+	}
+	
 	
 	@RequestMapping("/dad")
 	public String displayAllAccountDetails() {
-		return "dad";
+		service.findAllBankAccountsDetails();
+		return "display1.jsp";
 		
 	}
-	@RequestMapping("/delete")
+	@RequestMapping("/deletePage")
 	public String delete() {
 		return "delete";
 		
 	}
-	@RequestMapping("/update")
-	public String update() {
-		return "update";
+	@RequestMapping("/delete")
+	public String deleteBankAccoount(@RequestParam("number") long accountId) {
+		try {
+			service.deleteBankAccount(accountId);
+		} catch (AccountNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "index";
 		
 	}
-	@RequestMapping("/searchAccount")
+	
+	/*
+	 * @RequestMapping("/updatePage") public String update() { return "update";
+	 * 
+	 * }
+	 * 
+	 * @RequestMapping("/update") public String
+	 * updateBankAccount(@RequestParam("number") long accountId) {
+	 * service.updateBankAccountDetails(accountId, accountHolderName, accountType);
+	 * return "index"; }
+	 */
+	
+	@RequestMapping("/searchAccountPage")
 	public String searchAccount() {
 		return "searchAccount";
 		
+	}
+	@RequestMapping("/searchAccount")
+	public String searchBankAccount(@RequestParam("number") long accountId) {
+		try {
+			service.searchAccountDetails(accountId);
+		} catch (AccountNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "searchDisplay";
 	}
 }
 	
